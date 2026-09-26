@@ -691,7 +691,6 @@ function showCartNotification() {
 /* =========================
    CHECKOUT
 ========================= */
-
 function checkout() {
 
     if (cart.length === 0) {
@@ -702,14 +701,74 @@ function checkout() {
     }
 
 
-    const phone = "962781257466";
+    const orderType =
+        document.querySelector(
+            'input[name="order-type"]:checked'
+        ).value;
+
+
+    let orderInfo = "";
+
+
+    if (orderType === "table") {
+
+        const tableNumber =
+            document.getElementById("table-number").value.trim();
+
+
+        if (!tableNumber) {
+
+            alert("يرجى إدخال رقم الطاولة.");
+
+            return;
+        }
+
+
+        orderInfo =
+            `🪑 رقم الطاولة: ${tableNumber}%0A`;
+
+    } else {
+
+        const phone =
+            document.getElementById("customer-phone").value.trim();
+
+
+        if (!phone) {
+
+            alert("يرجى إدخال رقم الهاتف.");
+
+            return;
+        }
+
+
+        orderInfo =
+            `📞 رقم الهاتف: ${phone}%0A`;
+
+    }
+
+
+    const whatsappNumber =
+        "962790000000";
 
 
     let message =
         "مرحباً Café Luna 👋%0A%0A";
 
+
     message +=
-        "أرغب بطلب:%0A";
+        "🛍️ *طلب جديد*%0A%0A";
+
+
+    message +=
+        orderInfo;
+
+
+    message +=
+        "%0A";
+
+
+    message +=
+        "📋 *الطلب:*%0A";
 
 
     cart.forEach(item => {
@@ -720,24 +779,24 @@ function checkout() {
     });
 
 
-    const total = cart.reduce(
-        (sum, item) =>
-            sum + item.price * item.quantity,
-        0
-    );
+    const total =
+        cart.reduce(
+            (sum, item) =>
+                sum + item.price * item.quantity,
+            0
+        );
 
 
     message +=
-        `%0Aالمجموع: ${total.toFixed(2)} JD`;
+        `%0A💰 *المجموع: ${total.toFixed(2)} JD*`;
 
 
     window.open(
-        `https://wa.me/${phone}?text=${message}`,
+        `https://wa.me/${whatsappNumber}?text=${message}`,
         "_blank"
     );
 
 }
-
 
 /* =========================
    INITIALIZE
