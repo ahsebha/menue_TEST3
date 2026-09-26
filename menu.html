@@ -199,6 +199,81 @@
 
 
             <div class="cart-footer">
+                <div class="order-info">
+
+    <h3>معلومات الطلب</h3>
+
+    <div class="order-type">
+
+        <label class="order-option active">
+            <input
+                type="radio"
+                name="order-type"
+                value="table"
+                checked
+                onchange="changeOrderType()"
+            >
+
+            <span>
+                🪑 أنا داخل الكافيه
+            </span>
+        </label>
+
+
+        <label class="order-option">
+            <input
+                type="radio"
+                name="order-type"
+                value="phone"
+                onchange="changeOrderType()"
+            >
+
+            <span>
+                📦 أنا خارج الكافيه
+            </span>
+        </label>
+
+    </div>
+
+
+    <!-- Table -->
+    <div
+        class="order-field"
+        id="table-field">
+
+        <label for="table-number">
+            رقم الطاولة
+        </label>
+
+        <input
+            type="number"
+            id="table-number"
+            placeholder="مثال: 12"
+            min="1"
+        >
+
+    </div>
+
+
+    <!-- Phone -->
+    <div
+        class="order-field"
+        id="phone-field"
+        style="display: none;">
+
+        <label for="customer-phone">
+            رقم الهاتف
+        </label>
+
+        <input
+            type="tel"
+            id="customer-phone"
+            placeholder="07XXXXXXXX"
+        >
+
+    </div>
+
+</div>
 
                 <div class="cart-total-row">
 
