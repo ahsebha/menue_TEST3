@@ -4,14 +4,7 @@
 
 const products = [
 
-    {
-        id: 1,
-        name: "Espresso",
-        description: "إسبريسو ",
-        price: 1.50,
-        category: "hot",
-        image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e32?auto=format&fit=crop&w=800&q=85"
-    },
+
     {
         id: 2,
         name: "Americano",
