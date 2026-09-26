@@ -740,7 +740,7 @@ function checkout() {
 
 
     const whatsappNumber =
-        "962790000000";
+        "962781257466";
 
 
     let message =
