@@ -743,6 +743,53 @@ function checkout() {
    INITIALIZE
 ========================= */
 
+
 displayProducts();
 
 updateCart();
+function changeOrderType() {
+
+    const selected =
+        document.querySelector(
+            'input[name="order-type"]:checked'
+        );
+
+    const tableField =
+        document.getElementById("table-field");
+
+    const phoneField =
+        document.getElementById("phone-field");
+
+    const tableInput =
+        document.getElementById("table-number");
+
+    const phoneInput =
+        document.getElementById("customer-phone");
+
+
+    if (selected.value === "table") {
+
+        tableField.style.display = "block";
+        phoneField.style.display = "none";
+
+        tableInput.required = true;
+        phoneInput.required = false;
+
+        phoneInput.value = "";
+
+    } else {
+
+        tableField.style.display = "none";
+        phoneField.style.display = "block";
+
+        tableInput.required = false;
+        phoneInput.required = true;
+
+        tableInput.value = "";
+
+    }
+
+}
+
+
+
