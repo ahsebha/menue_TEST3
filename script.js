@@ -703,7 +703,7 @@ function checkout() {
     }
 
 
-    const phone = "962790000000";
+    const phone = "962781257466";
 
 
     let message =
