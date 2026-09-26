@@ -3,6 +3,14 @@
 ========================= */
 
 const products = [
+   {
+    id: 1,
+    name: "Espresso",
+    description: "إسبريسو غني ومركز",
+    price: 1.50,
+    category: "hot",
+    image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=85"
+},
 
 
     {
